@@ -9,7 +9,7 @@
     "react-scripts": "^2.1.5"
   },
   "scripts": {
-    "start": "NODE_ENV=development react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -23,7 +23,11 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "precommit": "NODE_ENV=development lint-staged",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
