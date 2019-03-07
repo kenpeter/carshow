@@ -1,3 +1,5 @@
+import { getCars } from '../api/cars';
+
 export const START_LOAD_HOME = 'app/home/START_LOAD_HOME';
 export const LOAD_HOME_SUCCESS = 'app/home/LOAD_HOME_SUCCESS';
 export const LOAD_HOME_FAIL = 'app/home/LOAD_HOME_FAIL';
@@ -40,6 +42,9 @@ export const homeReducer = (state = initState, action) => {
 };
 
 export const startLoadHome = () => {
+
+  console.log('-- startLoadHome --');
+
   return {
     type: START_LOAD_HOME,
     loading: true,
@@ -49,6 +54,9 @@ export const startLoadHome = () => {
 };
 
 export const loadHomeSuccess = (data) => {
+
+  console.log('-- loadHomeSuccess --');
+
   return {
     type: LOAD_HOME_SUCCESS,
     data,
@@ -59,11 +67,37 @@ export const loadHomeSuccess = (data) => {
 };
 
 export const loadHomeFail = (errors) => {
+
+  console.log('-- loadHomeFail --');
+
   return {
     type: LOAD_HOME_FAIL,
     data : [],
     loading: false,
     isError: true,
     errors
+  };
+};
+
+export const loadHomeAPI = () => {
+
+  console.log('-- loadHomeAPI --');
+
+  return dispatch => {
+    dispatch(startLoadHome());
+    getCars()
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        console.log('--res--')
+        console.log(res);
+        dispatch(loadHomeSuccess(res));
+      })
+      .catch((err) => {
+        console.log('-- err --');
+        console.log(err);
+        loadHomeFail(['load data error']);
+      });
   };
 };
