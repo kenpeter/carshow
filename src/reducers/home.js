@@ -1,4 +1,5 @@
 import { getCars } from '../api/cars';
+import { orgnizeCarData } from "../helpers/cars";
 
 export const START_LOAD_HOME = 'app/home/START_LOAD_HOME';
 export const LOAD_HOME_SUCCESS = 'app/home/LOAD_HOME_SUCCESS';
@@ -90,9 +91,8 @@ export const loadHomeAPI = () => {
         return res.json();
       })
       .then(res => {
-        console.log('--res--')
-        console.log(res);
-        dispatch(loadHomeSuccess(res));
+        const data = orgnizeCarData(res);
+        dispatch(loadHomeSuccess(data));
       })
       .catch((err) => {
         console.log('-- err --');
