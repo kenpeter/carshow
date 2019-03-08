@@ -1,4 +1,4 @@
-export const orgnizeCarData = (data) => {
+const orgnizeCarData = (data) => {
   const myhash = new Map();
 
   // Single show
@@ -26,3 +26,5 @@ export const orgnizeCarData = (data) => {
 
   return myhash;
 };
+
+export default orgnizeCarData;

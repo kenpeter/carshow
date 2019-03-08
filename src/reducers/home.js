@@ -1,5 +1,5 @@
-import { getCars } from '../api/cars';
-import { orgnizeCarData } from "../helpers/cars";
+import getCars from '../api/cars';
+import orgnizeCarData from "../helpers/cars";
 
 export const START_LOAD_HOME = 'app/home/START_LOAD_HOME';
 export const LOAD_HOME_SUCCESS = 'app/home/LOAD_HOME_SUCCESS';
@@ -83,9 +83,7 @@ export const loadHomeAPI = () => {
         dispatch(loadHomeSuccess(data));
       })
       .catch((err) => {
-        console.log('-- err --');
-        console.log(err);
-        loadHomeFail(['Load data error']);
+        loadHomeFail(err);
       });
   };
 };

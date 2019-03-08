@@ -12,3 +12,15 @@
   display: block;
   margin-left: 30px;
 }
+
+.header {
+  display: block;
+  height: 30px;
+  background-color: cadetblue;
+}
+
+.footer {
+  display: block;
+  height: 30px;
+  background-color: cadetblue;
+}

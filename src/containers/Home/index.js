@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Home as HomeComponent } from '../../components/Home';
+import { default as HomeComponent } from '../../components/Home';
 import MainLayout from '../../layouts/MainLayout';
 import { loadHomeAPI } from '../../reducers/home';
 
@@ -26,8 +25,8 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
-
+Home.defaultProps = {
+  data: []
 };
 
 const mapStateToProps = (state) => {

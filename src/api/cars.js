@@ -1,6 +1,6 @@
 import Config from '../config';
 
-export const getCars = () => {
+const getCars = () => {
   return fetch(Config.carUrl, {
     method: 'GET',
     headers: {
@@ -9,3 +9,5 @@ export const getCars = () => {
     mode: 'cors'
   });
 };
+
+export default getCars;

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
-import { styles } from './styles';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 class MainLayout extends Component {
 
@@ -30,6 +29,6 @@ MainLayout.propTypes = {
 
 MainLayout.defaultProps = {
   children: null
-}
+};
 
 export default MainLayout;

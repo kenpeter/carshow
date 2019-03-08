@@ -1,7 +1,6 @@
 import React from 'react';
 
-export const Home = ({ data }) => {
-
+const Home = ({ data }) => {
   function buildList() {
     const finalArr = [];
 
@@ -34,8 +33,8 @@ export const Home = ({ data }) => {
       { buildList() }
     </div>
   );
+};
 
-
-}
+export default Home;
 
 
