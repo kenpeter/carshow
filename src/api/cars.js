@@ -1,6 +1,7 @@
 import Config from '../config';
 
 const getCars = () => {
+  /* eslint-disable no-undef */
   return fetch(Config.carUrl, {
     method: 'GET',
     headers: {

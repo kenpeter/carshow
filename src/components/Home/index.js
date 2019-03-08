@@ -7,8 +7,7 @@ const Home = ({ data }) => {
     data.forEach((arr, make) => {
       const tmpArr = [];
       for (let i=0; i<arr.length; i+=1) {
-        const model = arr[i].model;
-        const show = arr[i].show;
+        const { model, show } = arr[i];
         tmpArr.push(
           <div key={i} className='level_2'>
             {model}

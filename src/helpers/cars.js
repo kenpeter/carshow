@@ -4,13 +4,11 @@ const orgnizeCarData = (data) => {
   // Single show
   for (let i = 0; i < data.length; i+=1) {
     const item = data[i];
-    const show = item.name;
-    const cars = item.cars;
+    const { name: show, cars } = item;
 
     // Single car
     for (let k = 0; k < cars.length; k+=1) {
-      const model = cars[k].model;
-      const make = cars[k].make;
+      const { model, make } = cars[k];
 
       // Same make
       if (myhash.has(make)) {

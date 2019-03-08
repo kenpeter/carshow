@@ -20,7 +20,13 @@
     "FormData": true,
     "FileReader": true,
     "Blob": true,
-    "navigator": true
+    "navigator": true,
+    "expect": true
   },
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "env": {
+    "commonjs": true,
+    "node": true,
+    "mocha": true
+  }
 }
