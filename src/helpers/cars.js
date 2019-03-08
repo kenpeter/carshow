@@ -2,13 +2,13 @@ export const orgnizeCarData = (data) => {
   const myhash = new Map();
 
   // Single show
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i+=1) {
     const item = data[i];
     const show = item.name;
     const cars = item.cars;
 
     // Single car
-    for (let k = 0; k < cars.length; k++) {
+    for (let k = 0; k < cars.length; k+=1) {
       const model = cars[k].model;
       const make = cars[k].make;
 

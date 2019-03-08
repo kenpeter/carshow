@@ -43,9 +43,6 @@ export const homeReducer = (state = initState, action) => {
 };
 
 export const startLoadHome = () => {
-
-  console.log('-- startLoadHome --');
-
   return {
     type: START_LOAD_HOME,
     loading: true,
@@ -55,9 +52,6 @@ export const startLoadHome = () => {
 };
 
 export const loadHomeSuccess = (data) => {
-
-  console.log('-- loadHomeSuccess --');
-
   return {
     type: LOAD_HOME_SUCCESS,
     data,
@@ -68,9 +62,6 @@ export const loadHomeSuccess = (data) => {
 };
 
 export const loadHomeFail = (errors) => {
-
-  console.log('-- loadHomeFail --');
-
   return {
     type: LOAD_HOME_FAIL,
     data : [],
@@ -81,9 +72,6 @@ export const loadHomeFail = (errors) => {
 };
 
 export const loadHomeAPI = () => {
-
-  console.log('-- loadHomeAPI --');
-
   return dispatch => {
     dispatch(startLoadHome());
     getCars()
@@ -97,7 +85,7 @@ export const loadHomeAPI = () => {
       .catch((err) => {
         console.log('-- err --');
         console.log(err);
-        loadHomeFail(['load data error']);
+        loadHomeFail(['Load data error']);
       });
   };
 };

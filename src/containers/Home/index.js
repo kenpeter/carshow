@@ -6,16 +6,21 @@ import MainLayout from '../../layouts/MainLayout';
 import { loadHomeAPI } from '../../reducers/home';
 
 class Home extends Component {
-
-  constructor(props) {
-    super(props);
-    loadHomeAPI();
+  componentDidMount() {
+    this.props.loadHomeAPIProps();
   }
 
   render() {
+    const { data } = this.props;
+
     return (
       <MainLayout>
-        <HomeComponent />
+        {
+          data.length === 0 ?
+            <p>Loading....</p>
+          :
+          <HomeComponent data={ data } />
+        }
       </MainLayout>
     );
   }
@@ -25,11 +30,14 @@ Home.propTypes = {
 
 };
 
-const mapStateToProps = (state) => ({
-});
+const mapStateToProps = (state) => {
+  return {
+    data: state.homeReducer.data
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
-  loadHomeAPI: dispatch(loadHomeAPI())
+  loadHomeAPIProps: () => dispatch(loadHomeAPI())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
