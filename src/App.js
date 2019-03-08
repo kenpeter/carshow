@@ -4,6 +4,7 @@ import './App.css';
 import store from './store';
 import Home from './containers/Home';
 
+/* eslint-disable react/prefer-stateless-function */
 export default class App extends Component {
   render() {
     return (

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+/* eslint-disable import/no-named-default */
 import { default as HomeComponent } from '../../components/Home';
 import MainLayout from '../../layouts/MainLayout';
 import { loadHomeAPI } from '../../reducers/home';
 
 class Home extends Component {
   componentDidMount() {
+    /* eslint-disable react/destructuring-assignment */
     this.props.loadHomeAPIProps();
   }
 
