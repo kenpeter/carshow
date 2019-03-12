@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+// import { Switch, Route, BrowserRouter } from 'react-router';
+// router -> switch -> route
+import { Route, Switch, Router } from 'react-router-dom';
+import history from './history';
 import './App.css';
 import store from './store';
 import Home from './containers/Home';
+import HomeTest from './containers/HomeTest';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <Home/>
-        </div>
+        <Router history={history}>
+          <Switch>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/homeTest" component={HomeTest} />
+            <Route path="*" component={Home} />
+          </Switch>
+        </Router>
       </Provider>
     )
   }
